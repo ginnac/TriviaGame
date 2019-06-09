@@ -19,6 +19,10 @@ var intervalSec;
 var answerIndex;
 var array;
 var count = 31;
+var textAnswer;
+var correctAnswersScore= 0;
+var unansweredScore =0;
+var incorrectAnswersScore =0;
 //lets start from a random value in our objectNamesarray
 //var finalObjectName = objectsNames[Math.floor(Math.random() * objectsNames.length)];
 //console.log(finalObjectName);
@@ -87,6 +91,7 @@ function displayAnswers(){
         //print 4 answer
         
         $("#answer4").text(objectsNames[index].answers);
+
     }
 
     
@@ -118,11 +123,13 @@ function timer()
 count=count-1;
 $("#timer").text(count + " " + "seconds left");
  if(count==0){
-count=31;}
+count=31;
+unansweredScore = unansweredScore+1;}
 }
 
 //function for intervals for the seconds countdown
 function intervalTimer(){
+    count = 31;
     
     intervalSec = setInterval(function(){timer();},1000);
 
@@ -131,20 +138,41 @@ intervalTimer();
 
 // function to clear interval when all questions have been answered or 
 
+function stopAndNextQuestion(){
+    clearInterval(interval);
+    clearInterval(intervalSec);
+}
 
- // function to update score
-
- function score(){
-
+// function to update score
+function score(){
 //correct answers
+$(".answer").on("click",function(){
+     textAnswer = $(this).text();
+     if(textAnswer === objectsNames[index].rightAnswer){
+        clearInterval(intervalSec);
+        intervalTimer();
+        nextQuestion();
+        correctAnswersScore = correctAnswersScore+1;
+        }
 //incorrect answers
-//unanswered
+    else{
+        clearInterval(intervalSec);
+        intervalTimer();
+        nextQuestion();
+        incorrectAnswersScore = incorrectAnswersScore+1;
+
+    }
+
+});
+
+}
+
+ score();
 
 
- }
-
-//preview of the score
+//View of the score
  function gameEnd(){
+     if 
 
  }
 

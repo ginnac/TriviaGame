@@ -15,8 +15,10 @@ question3 ={
     }]
 
 var interval;
+var intervalSec;
 var answerIndex;
-
+var array;
+var count = 31;
 //lets start from a random value in our objectNamesarray
 //var finalObjectName = objectsNames[Math.floor(Math.random() * objectsNames.length)];
 //console.log(finalObjectName);
@@ -33,7 +35,12 @@ $( document ).ready(function() {
     $("#content").hide();
     }
 
+    function hideStats(){
+        $("#stats").hide();
+    }
+
     hideContent();
+    hideStats();
 
 
 
@@ -42,7 +49,7 @@ $( document ).ready(function() {
     $("#start-button").on("click",function(){
     $("#content").show();
     $("#start-button").hide();
-    displayquestions()
+    displayquestions();
     loopOfQuestions();
     });
     }
@@ -54,48 +61,75 @@ $( document ).ready(function() {
    function displayquestions(){
     //display questions:
     $("#question").text(objectsNames[index].name);
-    //display answers: 
-        //let's print them randomly: 
-        //get random indexes: 
+    displayAnswers();
+   }
+
+//function to display answers: 
+
+function displayAnswers(){
+        array = objectsNames[index].answers;
+        //get random indexes so order can be changed randomly: 
         answerIndex = Math.floor(Math.random()* 4);
         //print answer option
         $("#answer1").text(objectsNames[index].answers[answerIndex]);
-        //push it to empty array
-        //
+        array.splice(answerIndex,1);
+       
+                   
         //print second answer
-        //remove it from array
+        answerIndex = Math.floor(Math.random()*3);
+        $("#answer2").text(objectsNames[index].answers[answerIndex]);
+        array.splice(answerIndex,1);
+       
         //print 3 answer 
-        //remove it from array
+        answerIndex = Math.floor(Math.random()* 2);
+        $("#answer3").text(objectsNames[index].answers[answerIndex]);
+        array.splice(answerIndex,1);
         //print 4 answer
-        //
+        
+        $("#answer4").text(objectsNames[index].answers);
+    }
 
-
-
-
-   }
+    
 
 
 
 //function to pass to next question
 
 function nextQuestion(){
+   
+
     index++;
 
-    $("#question").text(objectsNames[index].name);
-
-
-  setTimeout(function(){displayquestions();}, 1000);
+setTimeout(function(){displayquestions();},10);
 
  };
 
 
  //function for interval so functions can happen again and again until reaches the total length of the Objectnames array:
 function loopOfQuestions(){
-    interval = setInterval(function(){nextQuestion()}, 3000);
+    
+    interval = setInterval(function(){nextQuestion();},30000);
 
 }
- 
-// function to clear interval when all questions have been asked
+
+//function to get the time left show in the DOM: 
+function timer()
+{ $("#timer").text(count + " " + "seconds left");
+count=count-1;
+$("#timer").text(count + " " + "seconds left");
+ if(count==0){
+count=31;}
+}
+
+//function for intervals for the seconds countdown
+function intervalTimer(){
+    
+    intervalSec = setInterval(function(){timer();},1000);
+
+}
+intervalTimer();
+
+// function to clear interval when all questions have been answered or 
 
 
  // function to update score
@@ -109,7 +143,14 @@ function loopOfQuestions(){
 
  }
 
+//preview of the score
  function gameEnd(){
+
+ }
+
+ //reset game 
+
+ function reset(){
 
  }
 

@@ -25,7 +25,7 @@ var intervalTimeOut;
 var answerIndex;
 var array;
 var index = 0;
-var count = 31;
+var count = 30;
 var textAnswer;
 var correctAnswersScore= 0;
 var unansweredScore =0;
@@ -99,7 +99,6 @@ function displayAnswers(){
 
 //function to pass to next question
     function nextQuestion(){
-        clearInterval(intervalSec);
         //first let's get the answer- 
         quickReview();
         //pass to next index (objectNames array)
@@ -131,15 +130,14 @@ function displayAnswers(){
 
     //function for interval so questions can be displayed again and again until reaches the total length of the Objectnames array:
     function loopOfQuestions(){
-        interval = setInterval(function(){nextQuestion();},31000);
+        interval = setInterval(function(){nextQuestion();},30000);
     }
 
     //function to get the time left show in the DOM: 
     function timer(){
-        $("#timer").text(count + " " + "seconds left");
         count=count-1;
         $("#timer").text(count + " " + "seconds left");
-        if(count==0){count=31;
+        if(count==0){count=30;
             clearInterval(intervalSec);
             clearInterval(interval);
             nextQuestion();
@@ -153,7 +151,8 @@ function displayAnswers(){
 
     //function for intervals for the seconds countdown
     function intervalTimer(){ 
-        count = 31;
+        count = 30;
+        $("#timer").text(count + " " + "seconds left");
         intervalSec = setInterval(function(){timer();},1000);
     }
 
@@ -217,7 +216,7 @@ score();
     function reset(){
         $("#start-again-button").on("click",function(){
             index = 0;
-            count = 31;
+            count = 30;
             correctAnswersScore= 0;
             unansweredScore =0;
             incorrectAnswersScore =0;

@@ -67,7 +67,6 @@ $( document ).ready(function() {
     $("#pic").hide();
     $("#result").hide();
     $("#correctAnsweris").hide();
-   
    }
 
 //function to display answers: 
@@ -109,7 +108,7 @@ function displayAnswers(){
         intervalTimeOut = setTimeout(function(){displayquestions();},2000);
  };
 
- //function for inmmediate results after a question: 
+    //function for inmmediate results after a question: 
     function quickReview(){  
         $("#pic").show();
         $("#answer-tabs").hide();

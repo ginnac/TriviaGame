@@ -59,6 +59,8 @@ $( document ).ready(function() {
 
  //function to display questions
     function displayquestions(){
+     if(index>= objectsNames.length){
+            return;   }
     //display questions:
     $("#question").text(objectsNames[index].name);
     displayAnswers();

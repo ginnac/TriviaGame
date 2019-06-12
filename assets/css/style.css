@@ -60,3 +60,8 @@ background-color: rgb(250, 68, 61);
   #correct-stats, #incorrect-stats, #unanswered-stats,#result,#question{
         font-weight: bold;
   }
+
+  #question{
+      margin-right: 3%;
+      margin-left: 3%;
+  }

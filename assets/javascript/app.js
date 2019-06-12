@@ -120,13 +120,18 @@ function displayAnswers(){
             $("#pic").attr("height","200px");
             $("#pic").attr( "width","200px");
         if(textAnswer === objectsNames[index].rightAnswer){
-            $("#result").text("Correct");
+            $("#result").text("That's Correct!");
             $("#correctAnsweris").text("Correct answer is:" + " " + objectsNames[index].rightAnswer);            
         }
 
-        else{
-            $("#result").text("Incorrect");
-            $("#correctAnsweris").text("Correct answer is:" + " " + objectsNames[index].rightAnswer);        
+        else if(objectsNames[index].answers.includes(textAnswer)){
+            $("#result").text("That's Incorrect");
+            $("#correctAnsweris").text("Correct answer is:" + " " + objectsNames[index].rightAnswer);     
+        }
+
+        else{   
+            $("#result").text("Time is up!");
+            $("#correctAnsweris").text("Correct answer is:" + " " + objectsNames[index].rightAnswer)      
         }
     }
 

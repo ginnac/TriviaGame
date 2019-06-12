@@ -12,47 +12,58 @@
   </head>
   <body>
     <div id="elements" class=".justify-content-center">
-        <h1 id="title"> Totally Trivial Trivia!</h1>
+        <h1 id="title" class="jumbotron jumbotron-fluid display-4"> Totally Trivial Trivia!</h1>
+    
+    <div class=" start jumbotron jumbotron-fluid">
 
-        <button id="start-button" type="button" class="btn btn-success btn-lg"> Start Trivia! </button>
+        <button id="start-button" type="button" class="btn btn-success btn-lg lead"> Start Trivia! </button>
+
+      </div>
 
     <div id="content"> 
 
        
 
-        <h5 id="timer"></h5>
+        <h5 class="lead jumbotron jumbotron-fluid" id="timer"></h5>
 
-        <h4 id="question"></h4>
+        <div class="jumbotron jumbotron-fluid results">
+        
+      
 
-        <h3 id="result"></h3>
-        <h4 id="correctAnsweris"></h4>
+        <h4 id="question" class="lead"></h4>
+
+        <h3 id="result" class="lead"></h3>
+        <h4 id="correctAnsweris" class="lead"></h4>
         
         <img id="pic" src="">
 
-        <div id="answer-tabs">
-        <!-- <h4 id="question"></h4> -->
+        <div id="answer-tabs" class="lead">
+       
 
-        
+       
 
-        <button ID="answer1" type="button" class="btn btn-success answer">Success</button>
-        <button ID="answer2" type="button" class="btn btn-success answer">Success</button>
-        <button ID="answer3" type="button" class="btn btn-success answer">Success</button>
-        <button ID="answer4" type="button" class="btn btn-success answer">Success</button>
+        <button ID="answer1" type="button" class="btn btn-success answer lead">Success</button>
+        <button ID="answer2" type="button" class="btn btn-success answer lead">Success</button>
+        <button ID="answer3" type="button" class="btn btn-success answer lead">Success</button>
+        <button ID="answer4" type="button" class="btn btn-success answer lead">Success</button>
+
+      </div>
 
       </div>
       </div>
+   
     
 
     
 
-        <div id="stats">
+        <div id="stats"class="lead jumbotron jumbotron-fluid">
 
-        <h3 id="final-message"> All done here! This is how you did: </h3>
-        <h5 id="correct-stats">Correct Answers: </h5>
-        <h5 id="incorrect-stats">incorrect Answers: </h5>
-        <h5 id="unanswered-stats">Unanswered: </h5>
+        <h3 id="final-message" class="lead"> All done here! This is how you did: </h3>
+        <h5 id="correct-stats" class="lead">Correct Answers: </h5>
+        <h5 id="incorrect-stats" class="lead">Incorrect Answers: </h5>
+        <h5 id="unanswered-stats" class="lead">Unanswered: </h5>
 
-        <button id="start-again-button" type="button" class="btn btn-success btn-lg "> Start again? </button>
+        <button id="start-again-button" type="button" class="btn btn-success btn-lg lead"> Start again? </button>
 
       </div>
     </div>

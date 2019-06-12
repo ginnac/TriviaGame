@@ -1,20 +1,20 @@
 //variables
 var objectsNames=[
 question1 = {
-    name: "which option below means HAPINESS in spanish?",
+    name: "Which option means HAPINESS in spanish?",
     answers:["Tristeza","Cordura","Tranquilidad","Felicidad"],
     rightAnswer:"Felicidad",
     src:"assets/images/felicidad.jpg",
 },
 question2 ={
-    name:"which option below means Chin in spanish",
+    name:"Which option means Chin in spanish?",
     answers:["Pies", "Manos", "Codos", "Menton"],
     rightAnswer: "Menton",
     src: "assets/images/chin1.jpeg"       
 },
 question3 ={
-    name:"which option below means TOWELS in spanish",
-    answers:[ "Toalla", "Frazada", "Tina", "Toro"],
+    name:"Which option means TOWELS in spanish?",
+    answers:[ "Toallas", "Frazadas", "Tinas", "Toros"],
     rightAnswer: "Toalla",
     src: "assets/images/toalla.jpg"  
 }];
